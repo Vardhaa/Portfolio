@@ -85,10 +85,21 @@ const TypewriterText = ({ texts }: { texts: string[] }) => {
 };
 
 const AzureLogo = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" fill="none">
-    <path d="M143.182 11.402L80.64 88.34 17.6 198.798h58.759l66.823-107.396z" fill="#fff" fillOpacity=".9"/>
-    <path d="M152.978 11.402l-62.54 76.938 84.282 110.458H238.4z" fill="#fff" fillOpacity=".6"/>
-    <path d="M17.6 198.798l58.759-107.456 63.041 16.478-63.04 90.978z" fill="#fff" fillOpacity=".45"/>
+  <svg className={className} viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="az1" x1="0.5" y1="0" x2="0.5" y2="1">
+        <stop offset="0" stopColor="#114A8B"/>
+        <stop offset="1" stopColor="#0669BC"/>
+      </linearGradient>
+      <linearGradient id="az2" x1="0.5" y1="0" x2="0.5" y2="1">
+        <stop offset="0" stopColor="#3CCBF4"/>
+        <stop offset="1" stopColor="#2892DF"/>
+      </linearGradient>
+    </defs>
+    <path d="M33.338 6.544h26.038L33.985 83.556a4.152 4.152 0 0 1-3.933 2.806H8.124a4.145 4.145 0 0 1-3.928-5.488L26.06 9.35a4.152 4.152 0 0 1 3.933-2.806h3.345z" fill="url(#az1)"/>
+    <path d="M68.943 61.22H29.977a1.911 1.911 0 0 0-1.305 3.307l25.103 23.448a4.171 4.171 0 0 0 2.846 1.387h22.188z" fill="#0078D4"/>
+    <path d="M33.338 6.544a4.118 4.118 0 0 0-3.943 2.85L4.229 80.81a4.14 4.14 0 0 0 3.9 5.552h20.468a4.443 4.443 0 0 0 3.41-2.857l4.935-14.562 17.655 16.484a4.24 4.24 0 0 0 2.667.935h23.279l-10.192-29.14-29.81.007L56.023 6.544z" fill="url(#az2)"/>
+    <path d="M69.939 9.351a4.149 4.149 0 0 0-3.931-2.807H33.648a4.15 4.15 0 0 1 3.931 2.807l21.864 71.524a4.146 4.146 0 0 1-3.931 5.487h32.36a4.146 4.146 0 0 0 3.93-5.487z" fill="#1490DF"/>
   </svg>
 );
 
