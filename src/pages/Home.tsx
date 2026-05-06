@@ -143,7 +143,7 @@ const CERTS = [
 // ── Contact Form (Formspree) ──────────────────────────────────────────────
 // Replace YOUR_FORM_ID below with your actual Formspree form ID
 // Get one free at https://formspree.io → New Form → copy the ID from the endpoint
-const WEB3FORMS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
+const WEB3FORMS_KEY = "e77e5b2d-3c75-42c9-b1cd-11d0d118a28d";
 
 function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
