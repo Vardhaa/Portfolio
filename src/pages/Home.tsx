@@ -84,6 +84,14 @@ const TypewriterText = ({ texts }: { texts: string[] }) => {
   );
 };
 
+const AzureLogo = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <path d="M143.182 11.402L80.64 88.34 17.6 198.798h58.759l66.823-107.396z" fill="#fff" fillOpacity=".9"/>
+    <path d="M152.978 11.402l-62.54 76.938 84.282 110.458H238.4z" fill="#fff" fillOpacity=".6"/>
+    <path d="M17.6 198.798l58.759-107.456 63.041 16.478-63.04 90.978z" fill="#fff" fillOpacity=".45"/>
+  </svg>
+);
+
 const CERTS = [
   {
     name: "DevOps Engineer Expert",
@@ -135,7 +143,7 @@ const CERTS = [
 // ── Contact Form (Formspree) ──────────────────────────────────────────────
 // Replace YOUR_FORM_ID below with your actual Formspree form ID
 // Get one free at https://formspree.io → New Form → copy the ID from the endpoint
-const FORMSPREE_ID = "YOUR_FORM_ID";
+const WEB3FORMS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
 
 function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -150,12 +158,13 @@ function ContactForm() {
     if (!form.name || !form.email || !form.message) return;
     setStatus("sending");
     try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ name: form.name, email: form.email, message: form.message }),
+        body: JSON.stringify({ access_key: WEB3FORMS_KEY, name: form.name, email: form.email, message: form.message, subject: `New message from ${form.name} via Portfolio` }),
       });
-      if (res.ok) {
+      const data = await res.json();
+      if (data.success) {
         setStatus("success");
         setForm({ name: "", email: "", message: "" });
       } else {
@@ -276,8 +285,9 @@ export default function Home() {
     { id: "skills", label: "02. Skills" },
     { id: "experience", label: "03. Experience" },
     { id: "projects", label: "04. Projects" },
-    { id: "resume", label: "05. Resume" },
-    { id: "contact", label: "06. Contact" },
+    { id: "certifications", label: "05. Certifications" },
+    { id: "resume", label: "06. Resume" },
+    { id: "contact", label: "07. Contact" },
   ];
 
   return (
@@ -671,7 +681,7 @@ export default function Home() {
                       {cert.issuer === "GitHub" ? (
                         <Github className="w-6 h-6 text-white" />
                       ) : (
-                        <span className="text-white font-bold text-lg font-mono">M</span>
+                        <AzureLogo className="w-7 h-7" />
                       )}
                     </div>
 
@@ -761,7 +771,7 @@ export default function Home() {
                     {selectedCert.issuer === "GitHub" ? (
                       <Github className="w-12 h-12 text-white" />
                     ) : (
-                      <span className="text-white font-bold text-4xl font-mono">M</span>
+                      <AzureLogo className="w-14 h-14" />
                     )}
                   </div>
 
