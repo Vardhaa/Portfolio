@@ -84,24 +84,15 @@ const TypewriterText = ({ texts }: { texts: string[] }) => {
   );
 };
 
-const AzureLogo = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="azA" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#00BFFF"/>
-        <stop offset="100%" stopColor="#0078D4"/>
-      </linearGradient>
-      <linearGradient id="azB" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#40D0FF"/>
-        <stop offset="100%" stopColor="#00A2E8"/>
-      </linearGradient>
-    </defs>
-    <polygon points="32,4 8,56 20,56 32,32 44,56 56,56" fill="url(#azA)"/>
-    <polygon points="32,20 24,56 40,56" fill="url(#azB)" opacity="0.85"/>
-    <polygon points="20,56 8,56 14,44" fill="#50E6FF" opacity="0.6"/>
-    <polygon points="44,56 56,56 50,44" fill="#50E6FF" opacity="0.6"/>
+const MicrosoftLogo = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
+    <rect x="1" y="1" width="10" height="10" fill="#F25022"/>
+    <rect x="12" y="1" width="10" height="10" fill="#7FBA00"/>
+    <rect x="1" y="12" width="10" height="10" fill="#00A4EF"/>
+    <rect x="12" y="12" width="10" height="10" fill="#FFB900"/>
   </svg>
 );
+
 
 const CERTS = [
   {
@@ -692,7 +683,7 @@ export default function Home() {
                       {cert.issuer === "GitHub" ? (
                         <Github className="w-6 h-6 text-white" />
                       ) : (
-                        <AzureLogo className="w-7 h-7" />
+                        <MicrosoftLogo className="w-7 h-7" />
                       )}
                     </div>
 
@@ -782,7 +773,7 @@ export default function Home() {
                     {selectedCert.issuer === "GitHub" ? (
                       <Github className="w-12 h-12 text-white" />
                     ) : (
-                      <AzureLogo className="w-14 h-14" />
+                      <MicrosoftLogo className="w-14 h-14" />
                     )}
                   </div>
 
