@@ -96,6 +96,15 @@ const MicrosoftLogo = ({ className }: { className?: string }) => (
 
 const CERTS = [
   {
+    name: "ML Operations Engineer Associate",
+    full: "Microsoft Certified: Machine Learning Operations Engineer Associate",
+    level: "Associate",
+    issuer: "Microsoft",
+    color: "from-[#00c896] to-[#0078d4]",
+    accent: "#00c896",
+    url: "https://learn.microsoft.com/en-us/users/vishnuvardhan-4193/credentials/fcca7eee0bc80c14",
+  },
+  {
     name: "DevOps Engineer Expert",
     full: "Microsoft Certified: DevOps Engineer Expert",
     level: "Expert",
