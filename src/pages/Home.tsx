@@ -349,9 +349,8 @@ export default function Home() {
             </h1>
             <div className="text-2xl md:text-4xl font-display font-medium text-muted-foreground mb-6 h-12">
               <TypewriterText texts={[
-                "DevOps Engineer",
-                "Platform Engineer",
-                "MLOps Engineer",
+                "DevOps & Platform  Engineer",
+                "MLOps & LLMOps Engineer",
                 "Cloud Architect"
               ]} />
             </div>
