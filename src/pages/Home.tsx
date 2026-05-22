@@ -351,7 +351,7 @@ export default function Home() {
               <TypewriterText texts={[
                 "DevOps & Platform  Engineer",
                 "MLOps & LLMOps Engineer",
-                "Cloud Infrastructure Architect"
+                "Forward Deployed Engineer"
               ]} />
             </div>
             <p className="max-w-2xl text-lg text-muted-foreground mb-10 leading-relaxed">
